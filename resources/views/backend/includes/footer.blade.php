@@ -15,3 +15,24 @@
 <script src="{{  asset('backend/assets/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
 <script src="{{  asset('backend/assets/layouts/global/scripts/quick-nav.min.js') }}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+@if (!empty($pluginjs))
+    @foreach ($pluginjs as $value)
+        <script src="{{ asset('backend/assets/'.$value) }}" type="text/javascript"></script>
+    @endforeach
+@endif
+
+@if (!empty($js))
+    @foreach ($js as $value)
+        <script src="{{ asset('backend/assets/js/customjs/'.$value) }}" type="text/javascript"></script>
+    @endforeach
+@endif
+
+<script>
+    jQuery(document).ready(function () {
+        @if (!empty($funinit))
+                @foreach ($funinit as $value)
+                    {{  $value }}
+                @endforeach
+        @endif
+    });
+</script>

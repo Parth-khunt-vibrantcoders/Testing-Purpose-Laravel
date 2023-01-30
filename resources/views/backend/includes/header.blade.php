@@ -27,5 +27,25 @@
     <!-- END THEME LAYOUT STYLES -->
     <link href="{{  asset('backend/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="favicon.ico" />
+
+    @if (!empty($css))
+        @foreach ($css as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('backend/assets/css/customcss/'.$value) }}">
+            @endif
+        @endforeach
+    @endif
+
+
+    @if (!empty($plugincss))
+        @foreach ($plugincss as $value)
+            @if(!empty($value))
+                <link rel="stylesheet" href="{{ asset('backend/assets/'.$value) }}">
+            @endif
+        @endforeach
+    @endif
+    <script>
+        var baseurl = "{{ asset('/') }}";
+    </script>
 </head>
 <!-- END HEAD -->

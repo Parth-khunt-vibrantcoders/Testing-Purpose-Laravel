@@ -15,9 +15,16 @@ $currentRoute = Route::current()->getName();
             </li>
             <!-- END SIDEBAR TOGGLER BUTTON -->
             <li class="nav-item start {{ $currentRoute == 'my-dashboard' ? 'active open' : ''}}">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="{{ route('my-dashboard') }}" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item start {{ $currentRoute == 'event-demo' ? 'active open' : ''}}">
+                <a href="{{ route('event-demo') }}" class="nav-link nav-toggle">
+                    <i class="icon-diamond"></i>
+                    <span class="title">Event Demo</span>
                 </a>
             </li>
         </ul>
